@@ -12,7 +12,7 @@ steps:
     provider: 'aws'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    backendServiceAWS: 'wyztech-devops-backend-state'
+    backendServiceAWS: 'wyztech-aws-connection'
     backendAWSBucketName: 'wyztech-devops-backend-state'
     backendAWSKey: 'wyzlabeks.tfstate'
 - task: TerraformTaskV1@0
@@ -20,7 +20,7 @@ steps:
     provider: 'aws'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-    environmentServiceNameAWS: 'wyztech-devops-backend-state'
+    environmentServiceNameAWS: 'wyztech-aws-connection'
 # - task: TerraformTaskV1@0
 #   inputs:
 #     provider: 'aws'
